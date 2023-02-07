@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
  
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to React, my first app!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+const Banner = () => {
+	return (
+	  <div className="banner">
+		<h1>Sextant</h1>
+	  </div>
+	);
+  };
+  
+  const Exhibit = ({ children, heading }) => {
+	return (
+	  <div className="exhibit">
+		<h2>{heading}</h2>
+		{children}
+	  </div>
+	);
+  };
+  
+  function App() {
+	return (
+	  <div className="App">
+		<Banner />
+		<Exhibit heading="Data Points">
+		  <a
+			className="App-link"
+			href="https://reactjs.org"
+			target="_blank"
+			rel="noopener noreferrer"
+		  >
+		  </a>
+		</Exhibit>
+	  </div>
+	);
+  }
+  
+  export default App;
